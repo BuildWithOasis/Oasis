@@ -30,7 +30,7 @@ body {
 .nav {
   max-width: 1500px;
   margin: auto;
-  padding: 4px 20px; /* slim */
+  padding: 4px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,17 +56,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   width: 70px;
   height: 60px;
-
   padding: 4px;
   border-radius: 10px;
-
   color: #A8B3BA;
   text-decoration: none;
   font-size: 0.7rem;
-
   transition: 0.2s ease;
   position: relative;
 }
@@ -76,7 +72,6 @@ body {
   width: 140px;
   height: 140px;
   object-fit: contain;
-
   position: absolute;
   top: -40px;
 }
@@ -101,6 +96,7 @@ body {
 .hero {
   width: 100%;
   height: 460px;
+  position: relative;
   overflow: hidden;
   background: #0F1A22;
 }
@@ -109,6 +105,20 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15,26,34,0) 0%,
+    rgba(15,26,34,0.3) 50%,
+    #0F1A22 100%
+  );
+  pointer-events: none;
 }
 
 /* MAIN */
@@ -126,20 +136,33 @@ body {
 
 h1 {
   font-size: 4rem;
+  margin-bottom: 8px;
 }
 
 .strata {
   color: #D87C3F;
   letter-spacing: 8px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #8FB37A;
+  font-weight: 500;
 }
 
 .button {
   margin-top: 30px;
-  padding: 16px 32px;
+  padding: 16px 32px 12px;
   background: #D87C3F;
   border: none;
   border-radius: 8px;
   color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 /* GRID */
@@ -192,40 +215,41 @@ h1 {
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .hero {
+    height: 320px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div class="nav">
 
-    <!-- BIG LOGO -->
     <div class="brand">
-      <img src="./assets/logo.png">
+      <img src="./assets/logo.png" alt="Oasis Strata logo">
     </div>
 
-    <!-- TABS -->
     <div class="tabs">
       <a class="tab active" href="#">
-        <img src="./assets/sculpt.png">
+        <img src="./assets/sculpt.png" alt="">
         <span>Sculpt</span>
       </a>
 
       <a class="tab" href="#">
-        <img src="./assets/paint.png">
+        <img src="./assets/paint.png" alt="">
         <span>Paint</span>
       </a>
 
       <a class="tab" href="#">
-        <img src="./assets/biomes.png">
+        <img src="./assets/biomes.png" alt="">
         <span>Biomes</span>
       </a>
 
       <a class="tab" href="#">
-        <img src="./assets/settings.png">
+        <img src="./assets/settings.png" alt="">
         <span>Settings</span>
       </a>
     </div>
@@ -233,15 +257,13 @@ h1 {
   </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
-  <img src="./assets/hero.png">
+  <img src="./assets/hero.png" alt="Oasis Strata terrain preview">
 </div>
 
-<!-- MAIN -->
 <div class="container">
 
-  <img src="./assets/logo.png" class="logo">
+  <img src="./assets/logo.png" class="logo" alt="Oasis Strata logo">
 
   <h1>OASIS</h1>
   <div class="strata">STRATA</div>
@@ -252,22 +274,22 @@ h1 {
 
   <div class="grid">
     <div class="card">
-      <img src="./assets/sculpt.png">
+      <img src="./assets/sculpt.png" alt="">
       <h3>Sculpt</h3>
     </div>
 
     <div class="card">
-      <img src="./assets/paint.png">
+      <img src="./assets/paint.png" alt="">
       <h3>Paint</h3>
     </div>
 
     <div class="card">
-      <img src="./assets/biomes.png">
+      <img src="./assets/biomes.png" alt="">
       <h3>Biomes</h3>
     </div>
 
     <div class="card">
-      <img src="./assets/settings.png">
+      <img src="./assets/settings.png" alt="">
       <h3>Settings</h3>
     </div>
   </div>
