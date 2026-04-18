@@ -17,7 +17,7 @@ body {
   color: #E8ECEF;
 }
 
-/* HEADER (SLIM) */
+/* HEADER */
 .header {
   position: sticky;
   top: 0;
@@ -30,16 +30,16 @@ body {
 .nav {
   max-width: 1500px;
   margin: auto;
-  padding: 6px 20px; /* VERY SMALL HEIGHT */
+  padding: 4px 20px; /* slim */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* LEFT LOGO (BIG, NO TEXT) */
+/* BIG LOGO LEFT */
 .brand img {
-  width: 150px;   /* BIG */
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
 }
 
@@ -71,14 +71,14 @@ body {
   position: relative;
 }
 
-/* HUGE ICONS (overflow outside button) */
+/* BIG ICONS */
 .tab img {
   width: 140px;
   height: 140px;
   object-fit: contain;
 
   position: absolute;
-  top: -40px; /* THIS LIFTS ICON UP */
+  top: -40px;
 }
 
 .tab span {
@@ -164,6 +164,35 @@ h1 {
   margin-top: 120px;
   color: #6C7A82;
 }
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .tab img {
+    width: 90px;
+    height: 90px;
+    top: -20px;
+  }
+
+  .brand img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 
@@ -173,29 +202,29 @@ h1 {
 <div class="header">
   <div class="nav">
 
-    <!-- LOGO ONLY -->
+    <!-- BIG LOGO -->
     <div class="brand">
       <img src="./assets/logo.png">
     </div>
 
     <!-- TABS -->
     <div class="tabs">
-      <a class="tab active" href="#sculpt">
+      <a class="tab active" href="#">
         <img src="./assets/sculpt.png">
         <span>Sculpt</span>
       </a>
 
-      <a class="tab" href="#paint">
+      <a class="tab" href="#">
         <img src="./assets/paint.png">
         <span>Paint</span>
       </a>
 
-      <a class="tab" href="#biomes">
+      <a class="tab" href="#">
         <img src="./assets/biomes.png">
         <span>Biomes</span>
       </a>
 
-      <a class="tab" href="#settings">
+      <a class="tab" href="#">
         <img src="./assets/settings.png">
         <span>Settings</span>
       </a>
