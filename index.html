@@ -6,9 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <style>
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -23,435 +21,153 @@ body {
 .header {
   position: sticky;
   top: 0;
-  background: rgba(9, 20, 28, 0.88);
-  backdrop-filter: blur(12px);
+  background: rgba(9, 20, 28, 0.9);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(229, 203, 137, 0.14);
   z-index: 100;
 }
 
 .nav {
-  max-width: 1480px;
+  max-width: 1800px;
   margin: auto;
-  padding: 26px 28px;
+  padding: 50px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  flex-wrap: wrap;
 }
 
+/* BRAND */
 .brand {
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex-shrink: 0;
+  gap: 20px;
 }
 
 .brand img {
-  width: 112px;
-  height: 112px;
-  object-fit: contain;
+  width: 180px;
+  height: 180px;
 }
 
 .brand span {
   font-weight: 700;
-  letter-spacing: 3px;
-  font-size: 1.3rem;
+  letter-spacing: 4px;
+  font-size: 1.4rem;
 }
 
 /* TABS */
 .tabs {
   display: flex;
   gap: 14px;
-  align-items: center;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
 .tab {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   color: #A8B3BA;
   text-decoration: none;
-  transition: 0.2s ease;
-  font-size: 1.15rem;
-  padding: 16px 18px;
-  border-radius: 18px;
-  position: relative;
-  background: transparent;
+  font-size: 1.2rem;
+  padding: 18px;
+  border-radius: 20px;
+  transition: 0.2s;
 }
 
 .tab img {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
-  opacity: 0.98;
-  transition: 0.2s ease;
-  filter: drop-shadow(0 0 12px rgba(216,124,63,0.08));
 }
 
 .tab:hover {
   color: white;
-  background: rgba(27, 43, 54, 0.75);
+  background: rgba(27, 43, 54, 0.7);
 }
 
 .tab:hover img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .tab.active {
   color: white;
-  background: linear-gradient(180deg, rgba(46, 76, 73, 0.72), rgba(24, 42, 52, 0.92));
-  box-shadow:
-    inset 0 1px 0 rgba(229, 203, 137, 0.10),
-    0 0 0 1px rgba(143, 179, 122, 0.14),
-    0 0 18px rgba(143, 179, 122, 0.12);
-}
-
-.tab.active img {
-  transform: scale(1.04);
+  background: rgba(46, 76, 73, 0.7);
+  box-shadow: 0 0 20px rgba(143,179,122,0.15);
 }
 
 /* HERO */
 .hero {
   width: 100%;
-  height: 460px;
-  position: relative;
+  height: 500px;
   overflow: hidden;
-  border-bottom: 1px solid rgba(229, 203, 137, 0.08);
 }
 
 .hero img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  opacity: 0.78;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(5, 10, 14, 0.08), rgba(5, 10, 14, 0.22)),
-    radial-gradient(circle at center, transparent 20%, rgba(9,20,28,0.25) 85%);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(15,26,34,0.02), #0F1A22 92%);
 }
 
 /* MAIN */
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 86px 24px 110px;
+  padding: 100px 20px;
   text-align: center;
 }
 
 .logo {
-  width: 520px;
-  max-width: 92%;
-  margin-bottom: 28px;
-  filter: drop-shadow(0 0 18px rgba(216,124,63,0.10));
+  width: 600px;
+  max-width: 95%;
 }
 
 h1 {
   font-size: 4rem;
-  margin: 0;
   letter-spacing: 4px;
-  font-weight: 800;
 }
 
 .strata {
   color: #D87C3F;
-  letter-spacing: 9px;
-  margin: 10px 0 28px;
-  font-size: 1.08rem;
+  letter-spacing: 8px;
 }
 
 h2 {
   color: #8FB37A;
-  font-weight: 500;
-  font-size: 2rem;
-  margin-bottom: 18px;
-}
-
-p {
-  color: #C8D2D8;
-  line-height: 1.7;
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-.hero-copy {
-  max-width: 720px;
-  margin: 0 auto;
 }
 
 .button {
-  margin-top: 38px;
-  padding: 15px 34px;
-  background: linear-gradient(180deg, #e0904f, #d87c3f);
+  margin-top: 30px;
+  padding: 16px 32px;
+  background: #D87C3F;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   cursor: pointer;
-  transition: 0.2s ease;
-  font-size: 1rem;
-  font-weight: 600;
-  box-shadow: 0 10px 25px rgba(216,124,63,0.15);
 }
 
-.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(216,124,63,0.22);
-}
-
-/* SECTIONS */
-.section {
-  margin-top: 120px;
-  scroll-margin-top: 220px;
-}
-
-.section-title {
-  margin-bottom: 18px;
-}
-
-.section-subtitle {
-  max-width: 680px;
-  margin: 0 auto;
-  color: #A8B3BA;
-}
-
-/* TOOL GRID */
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 48px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 60px;
 }
 
-/* ENGINE PANEL STYLE CARDS */
 .card {
-  background:
-    linear-gradient(180deg, rgba(27, 43, 54, 0.92), rgba(18, 31, 40, 0.98));
-  border: 1px solid rgba(143, 179, 122, 0.08);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.02),
-    0 12px 30px rgba(0,0,0,0.22);
-  padding: 52px 25px 42px;
+  background: #16232D;
+  padding: 50px 20px;
   border-radius: 18px;
-  transition: 0.22s ease;
-  text-align: center;
-  min-height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(216,124,63,0.16);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.03),
-    0 18px 36px rgba(0,0,0,0.28),
-    0 0 24px rgba(216,124,63,0.08);
-}
-
-.card-icon-wrap {
-  width: 190px;
-  height: 190px;
-  margin-bottom: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 24px;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.02), transparent 70%);
 }
 
 .card img {
-  width: 160px;
-  height: 160px;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 0 12px rgba(216,124,63,0.16));
+  width: 180px;
 }
 
-.card h3 {
-  margin: 0 0 10px;
-  font-size: 1.4rem;
-  color: #F1F4F6;
-}
-
-.card p {
-  font-size: 1.03rem;
-  color: #B9C4CA;
-}
-
-/* DETAIL PANELS */
-.detail-panel {
-  margin-top: 28px;
-  background:
-    linear-gradient(180deg, rgba(27, 43, 54, 0.92), rgba(18, 31, 40, 0.98));
-  border: 1px solid rgba(143, 179, 122, 0.08);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.02),
-    0 12px 30px rgba(0,0,0,0.22);
-  border-radius: 18px;
-  padding: 38px;
-  text-align: left;
-}
-
-.detail-inner {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-
-.detail-icon {
-  flex: 0 0 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 24px;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.02), transparent 72%);
-}
-
-.detail-icon img {
-  width: 165px;
-  height: 165px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 14px rgba(216,124,63,0.18));
-}
-
-.detail-copy h3 {
-  margin: 0 0 12px;
-  font-size: 1.8rem;
-  color: #F1F4F6;
-}
-
-.detail-copy p {
-  color: #C3CDD2;
-}
-
-/* FOOTER */
 .footer {
-  margin-top: 130px;
+  margin-top: 120px;
   color: #6C7A82;
-  font-size: 0.95rem;
-}
-
-/* TABLET */
-@media (max-width: 1280px) {
-  .nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tabs {
-    justify-content: center;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 980px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .detail-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .detail-panel {
-    text-align: center;
-  }
-
-  .brand img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .tab img {
-    width: 84px;
-    height: 84px;
-  }
-
-  .tab {
-    font-size: 1rem;
-    padding: 14px 16px;
-  }
-
-  .section {
-    scroll-margin-top: 180px;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero {
-    height: 300px;
-  }
-
-  .logo {
-    width: 320px;
-  }
-
-  h1 {
-    font-size: 2.8rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card-icon-wrap {
-    width: 200px;
-    height: 200px;
-  }
-
-  .card img {
-    width: 170px;
-    height: 170px;
-  }
-
-  .detail-icon {
-    width: 200px;
-    height: 200px;
-    flex: none;
-  }
-
-  .detail-icon img {
-    width: 170px;
-    height: 170px;
-  }
-
-  .brand img {
-    width: 64px;
-    height: 64px;
-  }
-
-  .tab {
-    padding: 10px 12px;
-    font-size: 0.95rem;
-  }
-
-  .tab img {
-    width: 64px;
-    height: 64px;
-  }
-
-  .tabs {
-    gap: 10px;
-  }
 }
 </style>
 </head>
@@ -460,162 +176,71 @@ p {
 
 <div class="header">
   <div class="nav">
+
     <div class="brand">
-      <img src="./assets/logo.png" alt="Oasis Strata logo">
+      <img src="./assets/logo.png">
       <span>OASIS</span>
     </div>
 
     <div class="tabs">
       <a class="tab active" href="#sculpt">
-        <img src="./assets/sculpt.png" alt="">
+        <img src="./assets/sculpt.png">
         <span>Sculpt</span>
       </a>
 
       <a class="tab" href="#paint">
-        <img src="./assets/paint.png" alt="">
+        <img src="./assets/paint.png">
         <span>Paint</span>
       </a>
 
       <a class="tab" href="#biomes">
-        <img src="./assets/biomes.png" alt="">
+        <img src="./assets/biomes.png">
         <span>Biomes</span>
       </a>
 
       <a class="tab" href="#settings">
-        <img src="./assets/settings.png" alt="">
+        <img src="./assets/settings.png">
         <span>Settings</span>
       </a>
     </div>
+
   </div>
 </div>
 
 <div class="hero">
-  <img src="./assets/hero.png" alt="Oasis Strata terrain preview">
+  <img src="./assets/hero.png">
 </div>
 
 <div class="container">
 
-  <img src="./assets/logo.png" class="logo" alt="Oasis Strata logo">
+  <img src="./assets/logo.png" class="logo">
 
   <h1>OASIS</h1>
   <div class="strata">STRATA</div>
 
-  <div class="hero-copy">
-    <h2>Build worlds with high-performance voxel terrain</h2>
-    <p>
-      A scalable terrain system for Unity.<br>
-      Designed for stylized and realistic large worlds.
-    </p>
-  </div>
+  <h2>Build worlds with high-performance voxel terrain</h2>
 
   <button class="button">Coming Soon</button>
 
-  <div class="section">
-    <h2 class="section-title">Core Tools</h2>
-    <p class="section-subtitle">
-      A streamlined terrain workflow built around sculpting, painting, biome control, and performance-focused settings.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon-wrap">
-          <img src="./assets/sculpt.png" alt="">
-        </div>
-        <h3>Sculpt</h3>
-        <p>Real-time terrain shaping with responsive voxel editing tools.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon-wrap">
-          <img src="./assets/paint.png" alt="">
-        </div>
-        <h3>Paint</h3>
-        <p>Layer-based texturing for stylized and realistic terrain surfaces.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon-wrap">
-          <img src="./assets/biomes.png" alt="">
-        </div>
-        <h3>Biomes</h3>
-        <p>Procedural environment control for distinct world regions and rules.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon-wrap">
-          <img src="./assets/settings.png" alt="">
-        </div>
-        <h3>Settings</h3>
-        <p>Full system control for terrain behavior, tuning, and performance.</p>
-      </div>
+  <div class="grid">
+    <div class="card">
+      <img src="./assets/sculpt.png">
+      <h3>Sculpt</h3>
     </div>
-  </div>
 
-  <div id="sculpt" class="section">
-    <h2>Sculpt</h2>
-    <div class="detail-panel">
-      <div class="detail-inner">
-        <div class="detail-icon">
-          <img src="./assets/sculpt.png" alt="">
-        </div>
-        <div class="detail-copy">
-          <h3>Responsive terrain editing</h3>
-          <p>
-            Shape terrain interactively with editing tools designed for speed, clarity, and large-scale voxel workflows.
-          </p>
-        </div>
-      </div>
+    <div class="card">
+      <img src="./assets/paint.png">
+      <h3>Paint</h3>
     </div>
-  </div>
 
-  <div id="paint" class="section">
-    <h2>Paint</h2>
-    <div class="detail-panel">
-      <div class="detail-inner">
-        <div class="detail-icon">
-          <img src="./assets/paint.png" alt="">
-        </div>
-        <div class="detail-copy">
-          <h3>Layer-driven texturing</h3>
-          <p>
-            Blend terrain materials cleanly with art-directed control for cliffs, soil, grass, and stylized surfaces.
-          </p>
-        </div>
-      </div>
+    <div class="card">
+      <img src="./assets/biomes.png">
+      <h3>Biomes</h3>
     </div>
-  </div>
 
-  <div id="biomes" class="section">
-    <h2>Biomes</h2>
-    <div class="detail-panel">
-      <div class="detail-inner">
-        <div class="detail-icon">
-          <img src="./assets/biomes.png" alt="">
-        </div>
-        <div class="detail-copy">
-          <h3>Procedural biome workflows</h3>
-          <p>
-            Build deserts, forests, mountain ranges, and distinct world regions with scalable biome logic and rules.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="settings" class="section">
-    <h2>Settings</h2>
-    <div class="detail-panel">
-      <div class="detail-inner">
-        <div class="detail-icon">
-          <img src="./assets/settings.png" alt="">
-        </div>
-        <div class="detail-copy">
-          <h3>System-wide tuning</h3>
-          <p>
-            Control performance, terrain generation, and editor behavior through a focused settings workflow.
-          </p>
-        </div>
-      </div>
+    <div class="card">
+      <img src="./assets/settings.png">
+      <h3>Settings</h3>
     </div>
   </div>
 
@@ -624,32 +249,6 @@ p {
   </div>
 
 </div>
-
-<script>
-const tabs = document.querySelectorAll('.tab');
-const sections = document.querySelectorAll('#sculpt, #paint, #biomes, #settings');
-
-function setActiveTab() {
-  let current = 'sculpt';
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 240;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  tabs.forEach(tab => {
-    tab.classList.remove('active');
-    if (tab.getAttribute('href') === `#${current}`) {
-      tab.classList.add('active');
-    }
-  });
-}
-
-window.addEventListener('scroll', setActiveTab);
-setActiveTab();
-</script>
 
 </body>
 </html>
