@@ -23,67 +23,71 @@ body {
 .header {
   position: sticky;
   top: 0;
-  background: rgba(9, 20, 28, 0.82);
+  background: rgba(9, 20, 28, 0.88);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(229, 203, 137, 0.14);
   z-index: 100;
 }
 
 .nav {
-  max-width: 1180px;
+  max-width: 1480px;
   margin: auto;
-  padding: 16px 24px;
+  padding: 26px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  flex-shrink: 0;
 }
 
 .brand img {
-  width: 56px;
-  height: 56px;
+  width: 112px;
+  height: 112px;
   object-fit: contain;
 }
 
 .brand span {
   font-weight: 700;
   letter-spacing: 3px;
-  font-size: 1.15rem;
+  font-size: 1.3rem;
 }
 
 /* TABS */
 .tabs {
   display: flex;
-  gap: 18px;
+  gap: 14px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .tab {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   color: #A8B3BA;
   text-decoration: none;
   transition: 0.2s ease;
-  font-size: 1rem;
-  padding: 14px 18px;
-  border-radius: 16px;
+  font-size: 1.15rem;
+  padding: 16px 18px;
+  border-radius: 18px;
   position: relative;
   background: transparent;
 }
 
 .tab img {
-  width: 64px;
-  height: 64px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
   opacity: 0.98;
   transition: 0.2s ease;
-  filter: drop-shadow(0 0 10px rgba(216,124,63,0.08));
+  filter: drop-shadow(0 0 12px rgba(216,124,63,0.08));
 }
 
 .tab:hover {
@@ -92,7 +96,7 @@ body {
 }
 
 .tab:hover img {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 .tab.active {
@@ -105,7 +109,7 @@ body {
 }
 
 .tab.active img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 /* HERO */
@@ -151,8 +155,8 @@ body {
 }
 
 .logo {
-  width: 260px;
-  max-width: 75%;
+  width: 520px;
+  max-width: 92%;
   margin-bottom: 28px;
   filter: drop-shadow(0 0 18px rgba(216,124,63,0.10));
 }
@@ -212,7 +216,7 @@ p {
 /* SECTIONS */
 .section {
   margin-top: 120px;
-  scroll-margin-top: 110px;
+  scroll-margin-top: 220px;
 }
 
 .section-title {
@@ -345,18 +349,20 @@ p {
   font-size: 0.95rem;
 }
 
-/* MOBILE */
-@media (max-width: 980px) {
+/* TABLET */
+@media (max-width: 1280px) {
   .nav {
     flex-direction: column;
-    gap: 16px;
+    align-items: center;
   }
 
   .tabs {
-    flex-wrap: wrap;
     justify-content: center;
   }
+}
 
+/* MOBILE */
+@media (max-width: 980px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -370,9 +376,23 @@ p {
     text-align: center;
   }
 
+  .brand img {
+    width: 80px;
+    height: 80px;
+  }
+
   .tab img {
-    width: 56px;
-    height: 56px;
+    width: 84px;
+    height: 84px;
+  }
+
+  .tab {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+
+  .section {
+    scroll-margin-top: 180px;
   }
 }
 
@@ -382,7 +402,7 @@ p {
   }
 
   .logo {
-    width: 190px;
+    width: 320px;
   }
 
   h1 {
@@ -414,13 +434,23 @@ p {
     height: 170px;
   }
 
+  .brand img {
+    width: 64px;
+    height: 64px;
+  }
+
   .tab {
     padding: 10px 12px;
+    font-size: 0.95rem;
   }
 
   .tab img {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .tabs {
+    gap: 10px;
   }
 }
 </style>
@@ -603,7 +633,7 @@ function setActiveTab() {
   let current = 'sculpt';
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 160;
+    const sectionTop = section.offsetTop - 240;
     if (window.scrollY >= sectionTop) {
       current = section.getAttribute('id');
     }
